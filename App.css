@@ -1,0 +1,88 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em rgba(131, 42, 141, 0.6));
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em rgba(131, 42, 141, 0.6));
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 1em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Affinity Outsourcing inspired styles */
+.affinity-gradient-text {
+  @apply bg-clip-text text-transparent bg-affinity-gradient;
+}
+
+.affinity-section {
+  @apply py-8 md:py-12 relative overflow-hidden;
+}
+
+.affinity-section-purple {
+  @apply bg-gradient-to-r from-apt-purple to-apt-lightpurple text-white;
+}
+
+.affinity-section-light {
+  @apply bg-apt-gray;
+}
+
+.affinity-card {
+  @apply rounded-lg shadow-affinity overflow-hidden transition-all duration-300;
+}
+
+.affinity-card:hover {
+  @apply shadow-affinity-hover -translate-y-1;
+}
+
+.affinity-icon-box {
+  @apply flex items-center justify-center rounded-full w-14 h-14 mb-2 transition-transform duration-300;
+}
+
+.affinity-icon-purple {
+  @apply bg-apt-purple/10 text-apt-purple;
+}
+
+.affinity-icon-blue {
+  @apply bg-apt-blue/10 text-apt-blue;
+}
+
+.affinity-divider {
+  @apply h-1 w-16 bg-apt-purple rounded-full my-2;
+}
+
+.affinity-divider-center {
+  @apply mx-auto;
+}

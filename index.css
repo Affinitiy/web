@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 14% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 14% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 14% 20%;
+
+    --primary: 292 54% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 292 54% 36%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 292 32% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 292 54% 36%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 292 54% 36%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border box-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight text-apt-darkgray;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p {
+    @apply text-apt-text leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-tight {
+    @apply max-w-7xl mx-auto px-4 sm:px-5 lg:px-6;
+  }
+  
+  .btn-primary {
+    @apply bg-apt-purple text-white px-5 py-2.5 rounded-md font-medium transition-all shadow-md
+           hover:bg-apt-lightpurple hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-apt-purple/30;
+  }
+  
+  .btn-secondary {
+    @apply bg-apt-blue text-white px-5 py-2.5 rounded-md font-medium transition-all shadow-md
+           hover:bg-apt-lightblue hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-apt-blue/30;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-apt-purple border border-apt-purple px-5 py-2.5 rounded-md font-medium
+           transition-all hover:bg-apt-purple/10 focus:outline-none focus:ring-2 focus:ring-apt-purple/30;
+  }
+  
+  .section-padding {
+    @apply py-8 md:py-12;
+  }
+  
+  .heading-underline {
+    @apply relative pb-3 after:content-[''] after:absolute after:left-0 after:bottom-0
+           after:h-1 after:w-16 after:bg-apt-purple after:rounded-full;
+  }
+  
+  .heading-underline-center {
+    @apply relative pb-3 after:content-[''] after:absolute after:left-1/2 after:bottom-0
+           after:h-1 after:w-16 after:bg-apt-purple after:rounded-full after:-translate-x-1/2;
+  }
+  
+  .nav-link {
+    @apply relative text-apt-darkgray hover:text-apt-purple transition-colors duration-300
+           after:absolute after:w-0 after:h-0.5 after:bg-apt-purple after:left-0 after:-bottom-1
+           after:transition-all after:duration-300 hover:after:w-full;
+  }
+  
+  .nav-link-active {
+    @apply text-apt-purple after:w-full;
+  }
+  
+  /* Card styles */
+  .affinity-card {
+    @apply bg-white rounded-lg shadow-affinity p-6 transition-all duration-300 hover:shadow-affinity-hover;
+  }
+  
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-affinity-hover hover:-translate-y-1;
+  }
+  
+  /* Image effect */
+  .img-zoom {
+    @apply transition-transform duration-500 hover:scale-105;
+  }
+  
+  /* Button hover */
+  .btn-hover {
+    @apply relative overflow-hidden before:absolute before:inset-0 before:bg-white/20 
+           before:translate-x-full hover:before:translate-x-[-100%] before:transition-transform before:duration-500;
+  }
+}
